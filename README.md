@@ -51,10 +51,8 @@ A análise responde:
 - Como evoluem os engajamentos ao longo do tempo?
 - Quais insights podem ajudar no planejamento de conteúdo no YouTube?
 
-## 🚀 Como Executar Localmente
+## 🚀 Seguindo uma prévia do visual realizado no Power BI
 
-Clone o repositório:
-```bash
-git clone https://github.com/Mauricio1806/youtube-playlist-etl.git
-cd youtube-playlist-etl
+<img width="1042" height="692" alt="image" src="https://github.com/user-attachments/assets/28a347ad-1840-4b99-a54e-25f1a57aba00" />
+
 
