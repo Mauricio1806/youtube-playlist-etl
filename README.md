@@ -2,21 +2,21 @@
 
 Este repositório contém um projeto de **coleta, tratamento e análise de dados de uma playlist do YouTube**, desenvolvido como parte de um **teste técnico**, utilizando **Python para ETL e Power BI para visualização de dados**.
 
-## 🎯 Objetivo
+Objetivo
 
-✅ Coletar dados de uma playlist utilizando a **YouTube Data API v3** (dentro do GCP).  
-✅ Tratar os dados em Python e exportar para CSV.  
-✅ Construir um **dashboard interativo no Power BI**.  
-✅ Contar uma história com os dados para facilitar decisões de marketing e conteúdo.
+- Coletar dados de uma playlist utilizando a **YouTube Data API v3** (dentro do GCP).  
+- Tratar os dados em Python e exportar para CSV.  
+- Construir um **dashboard interativo no Power BI**.  
+- Contar uma história com os dados para facilitar decisões de marketing e conteúdo.
 
-## 🛠️ Tecnologias Utilizadas
+Tecnologias Utilizadas
 
 - Python (`pandas`, `google-api-python-client`)
 - GCP (YouTube Data API)
 - Power BI
 - Git e GitHub
 
-## ⚙️ Funcionamento do Projeto
+Funcionamento do Projeto
 
 ### Coleta de Dados (ETL)
 
@@ -51,7 +51,7 @@ A análise responde:
 - Como evoluem os engajamentos ao longo do tempo?
 - Quais insights podem ajudar no planejamento de conteúdo no YouTube?
 
-## 🚀 Seguindo uma prévia do visual realizado no Power BI
+ Seguindo uma prévia do visual realizado no Power BI
 
 <img width="1042" height="692" alt="image" src="https://github.com/user-attachments/assets/28a347ad-1840-4b99-a54e-25f1a57aba00" />
 
