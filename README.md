@@ -58,4 +58,4 @@ A análise responde:
 
 Clone o repositório:
 ```bash
-git clone https://github.com/SEU_USUARIO/youtube-playlist-etl.git
+git clone https://github.com/Mauricio1806/youtube-playlist-etl.git
