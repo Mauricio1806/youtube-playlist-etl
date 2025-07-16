@@ -18,7 +18,7 @@ Este repositório contém um projeto de **coleta, tratamento e análise de dados
 
 ## ⚙️ Funcionamento do Projeto
 
-### 1️⃣ Coleta de Dados (ETL)
+### Coleta de Dados (ETL)
 
 O script em `src/youtube_playlist_collector.py` coleta:
 
@@ -33,7 +33,7 @@ O script em `src/youtube_playlist_collector.py` coleta:
 
 E exporta para `data/youtube_playlist_data.csv`.
 
-### 2️⃣ Dashboard no Power BI
+### Dashboard no Power BI
 
 O arquivo `dashboard/youtube_dashboard.pbix` contém um dashboard com:
 
@@ -43,7 +43,7 @@ O arquivo `dashboard/youtube_dashboard.pbix` contém um dashboard com:
 - Evolução de visualizações ao longo do tempo.
 - Tabela com miniaturas e links clicáveis.
 
-### 3️⃣ Storytelling
+### Storytelling
 
 A análise responde:
 - Quais artistas performam melhor na playlist?
@@ -53,7 +53,7 @@ A análise responde:
 
 ## 🚀 Como Executar Localmente
 
-1️⃣ Clone o repositório:
+Clone o repositório:
 ```bash
 git clone https://github.com/Mauricio1806/youtube-playlist-etl.git
 cd youtube-playlist-etl
