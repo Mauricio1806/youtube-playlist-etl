@@ -6,8 +6,8 @@ Este repositório contém um projeto de coleta, tratamento e análise de dados d
 
 ## 🎯 Objetivo
 
-- Coletar dados de uma playlist utilizando a **YouTube Data API v3**.
-- Tratar os dados e exportar para **CSV**.
+- Coletar dados de uma playlist utilizando a **YouTube Data API v3**, dentro do GCP
+- Tratar os dados em python e exportar para **CSV**.
 - Construir um **dashboard interativo no Power BI**.
 - Contar uma história com os dados para facilitar decisões de marketing e conteúdo.
 
@@ -16,6 +16,7 @@ Este repositório contém um projeto de coleta, tratamento e análise de dados d
 ## 🛠️ Tecnologias Utilizadas
 
 - Python (pandas, google-api-python-client)
+- GCP
 - Power BI
 - Git e GitHub
 
