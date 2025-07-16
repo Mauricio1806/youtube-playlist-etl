@@ -23,7 +23,7 @@ Este repositório contém um projeto de coleta, tratamento e análise de dados d
 
 ## ⚙️ Como funciona o projeto
 
-1️⃣ **Coleta de Dados**  
+**Coleta de Dados**  
 O script em `src/youtube_playlist_collector.py` coleta:
 - ID do vídeo
 - Título
@@ -36,7 +36,7 @@ O script em `src/youtube_playlist_collector.py` coleta:
 
 e exporta para `data/youtube_playlist_data.csv`.
 
-2️⃣ **Dashboard no Power BI**  
+**Dashboard no Power BI**  
 Em `dashboard/youtube_dashboard.pbix`, foi construído um dashboard com:
 - Indicadores de views, likes, comentários e quantidade de artistas.
 - Top 10 vídeos mais assistidos.
@@ -44,7 +44,7 @@ Em `dashboard/youtube_dashboard.pbix`, foi construído um dashboard com:
 - Evolução de visualizações ao longo do tempo.
 - Tabela com miniaturas e links clicáveis.
 
-3️⃣ **Storytelling**  
+**Storytelling**  
 A análise responde:
 - Quais artistas performam melhor na playlist?
 - Quais vídeos são mais assistidos?
@@ -55,6 +55,6 @@ A análise responde:
 
 ## 🚀 Como executar localmente
 
-1️⃣ Clone o repositório:
+Clone o repositório:
 ```bash
 git clone https://github.com/SEU_USUARIO/youtube-playlist-etl.git
