@@ -1,4 +1,4 @@
-# YouTube Playlist ETL and Dashboard 🚀
+# YouTube Playlist ETL e Dashboard 
 
 Este repositório contém um projeto de **coleta, tratamento e análise de dados de uma playlist do YouTube**, desenvolvido como parte de um **teste técnico**, utilizando **Python para ETL e Power BI para visualização de dados**.
 
