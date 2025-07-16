@@ -1,0 +1,91 @@
+# BIBLIOTECAS 
+from googleapiclient.discovery import build
+import pandas as pd
+import time
+import os
+import shutil
+
+# CONFIGURAÇÕES
+API_KEY = 'AIzaSyAuk1fb5m4vx5qT9xwWc4uY4FjxGKoVurg'
+youtube = build('youtube', 'v3', developerKey=API_KEY)
+PLAYLIST_ID = 'PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj'
+
+# FUNÇÕES
+def get_playlist_video_ids(playlist_id):
+    video_ids = []
+    next_page_token = None
+    while True:
+        pl_request = youtube.playlistItems().list(
+            part='contentDetails',
+            playlistId=playlist_id,
+            maxResults=50,
+            pageToken=next_page_token
+        )
+        pl_response = pl_request.execute()
+        for item in pl_response['items']:
+            video_ids.append(item['contentDetails']['videoId'])
+        next_page_token = pl_response.get('nextPageToken')
+        if not next_page_token:
+            break
+    return video_ids
+
+def get_video_details(video_ids):
+    all_video_stats = []
+    for i in range(0, len(video_ids), 50):
+        request = youtube.videos().list(
+            part='snippet,statistics',
+            id=','.join(video_ids[i:i + 50])
+        )
+        response = request.execute()
+        for video in response['items']:
+            video_id = video['id']
+            title = video['snippet']['title']
+            description = video['snippet'].get('description', '').replace('\n', ' ').replace('\r', ' ').replace('\"', '"')
+            published_at = video['snippet']['publishedAt']
+            thumbnail_url = video['snippet']['thumbnails']['high']['url']
+
+            stats = video.get('statistics', {})
+            view_count = int(stats.get('viewCount', 0))
+            like_count = int(stats.get('likeCount', 0))
+            comment_count = int(stats.get('commentCount', 0))
+
+            all_video_stats.append({
+                'video_id': video_id,
+                'title': title,
+                'description': description,
+                'published_at': published_at,
+                'thumbnail_url': thumbnail_url,
+                'view_count': view_count,
+                'like_count': like_count,
+                'comment_count': comment_count
+            })
+        time.sleep(0.1)
+    return all_video_stats
+
+# EXECUÇÃO 
+print("Coletando IDs dos vídeos da playlist...")
+video_ids = get_playlist_video_ids(PLAYLIST_ID)
+print(f"{len(video_ids)} vídeos encontrados. Coletando detalhes...")
+video_data = get_video_details(video_ids)
+
+# Cria o CSV no diretório atual
+df = pd.DataFrame(video_data)
+csv_filename = 'youtube_playlist_data.csv'
+df.to_csv(csv_filename, index=False, sep=';', encoding='utf-8-sig')
+print("CSV gerado na pasta do projeto.")
+
+#  MOVENDO PARA PASTA DO PROJETO 
+# Caminho destino para o meu projeto que irá para o GitHub
+destination_path = r'C:\Users\mauri\Videos\youtube_playlist_collector\youtube_playlist_data.csv'
+
+# Verifica e remove o arquivo de destino caso exista para evitar erro
+if os.path.exists(destination_path):
+    try:
+        os.remove(destination_path)
+    except PermissionError:
+        print(f"Feche o arquivo {destination_path} e rode novamente.")
+        raise SystemExit
+
+# Move o arquivo gerado para a pasta do projeto
+shutil.move(csv_filename, destination_path)
+print("Arquivo CSV movido para a pasta do projeto do GitHub.")

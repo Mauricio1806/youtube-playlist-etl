@@ -1,0 +1,77 @@
+PROJETO: ETL e Dashboard Power BI de Playlist do YouTube
+
+OBJETIVO
+Automatizar a coleta de dados de uma playlist do YouTube utilizando a YouTube Data API, realizando o tratamento e exportação dos dados para CSV e construção de um Dashboard no Power BI, transformando dados em insights acionáveis para decisões de marketing e conteúdo.
+
+TECNOLOGIAS
+- Python: Para coleta e tratamento de dados (pandas, google-api-python-client).
+- GCP (YouTube Data API v3): Para consulta de vídeos de playlists.
+- Power BI: Para visualização e análise de dados.
+- Git e GitHub: Para versionamento e disponibilização do projeto.
+
+PIPELINE DO PROJETO
+
+COLETA DE DADOS (PYTHON)
+- API Key configurada no script para autenticação na YouTube Data API.
+- O script realiza:
+   - Consulta à playlist fornecida.
+   - Paginação automática de todos os vídeos da playlist.
+   - Coleta dos campos:
+     - ID do vídeo
+     - Título
+     - Descrição
+     - Data de publicação
+     - Quantidade de likes
+     - Quantidade de views
+     - Quantidade de comentários
+     - URL da thumbnail
+- Os dados são tratados para:
+   - Remover quebras de linha e caracteres problemáticos.
+   - Conversão de números em inteiro.
+   - Padronização de colunas para análise.
+- Exportação para arquivo CSV separado por `;`, com encoding `utf-8-sig` para compatibilidade com Power BI.
+
+ DASHBOARD (POWER BI)
+O arquivo `.pbix` foi construído para explorar de forma clara os dados coletados, contendo:
+
+Indicadores:
+- Total de views
+- Total de likes
+- Total de comentários
+- Quantidade de vídeos
+
+Gráficos:
+- Top 10 vídeos mais assistidos(barras horizontais).
+- Evolução de visualizações ao longo do tempo(linha).
+- Views por vídeo/artista(barras).
+- Tabela detalhada com miniaturas (usando URL da thumbnail) e links clicáveis para acesso aos vídeos.
+
+Storytelling:
+- Quais vídeos trazem maior audiência.
+- Quais artistas performam melhor.
+- Qual evolução de engajamento ao longo do tempo.
+- Direcionamento de estratégias de conteúdo e marketing a partir de dados reais.
+
+RACIONAL POR TRÁS DAS ANÁLISES
+
+- Indicadores gerais: Oferecem visão macro de engajamento e potencial de alcance.
+- Top vídeos: Permite replicar estratégias de sucesso.
+- Evolução temporal: Permite identificar períodos de alta/baixa e impactos de lançamentos.
+- Views por artista: Suporte para decisões de parcerias e foco em artistas de maior retorno.
+- Tabela com miniaturas e links: Facilita navegação rápida para análise qualitativa do conteúdo.
+
+
+ARQUIVOS NO PROJETO
+- `Script em Python para captura do CSV.txt`: Script Python para coleta e tratamento.
+- `youtube_playlist_data.csv`: Base de dados tratada.
+- `Youtube Playlist Project.pbix`: Dashboard Power BI para análise.
+- `Documentação Técnica Projeto Youtube Playlist ETL.txt`: Documentação detalhada (este arquivo).
+
+OBSERVAÇÕES
+Projeto criado como parte de teste técnico para demonstrar:
+- Organização de código.
+- Boas práticas em ETL com Python.
+- Capacidade de coleta de dados de APIs.
+- Transformação de dados em insights utilizando Power BI.
+- Estruturação de projetos para GitHub e versionamento de portfólio.
+
